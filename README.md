@@ -4,7 +4,7 @@ This is an attempt to modernize the pentesting class that we take at UNCC. I wil
 
 ## Requirements
 * docker
- * install
+	* install
 * vagrant
 * virtualbox
 
