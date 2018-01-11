@@ -4,8 +4,15 @@ This is an attempt to modernize the pentesting class that we take at UNCC. I wil
 
 ## Requirements
 * docker
-	* install
+    * install
+        * linux - 
+        * OSX - 
+        * windows - 
 * vagrant
+    * install
+        * linux - 
+        * OSX - 
+        * windows - 
 * virtualbox
 
 ## Format
