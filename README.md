@@ -41,3 +41,6 @@ This is the folder that we will mount when we are using the lamp stack to the `/
 
 #### README.md
 I shall try to put a README.md in each folder to help describe what to do and how to do it for each folder.
+
+#### Vagrantfile
+I will try to include a Vagrantfile for each mutillidae excercise to make sure all the configuration is done properly
