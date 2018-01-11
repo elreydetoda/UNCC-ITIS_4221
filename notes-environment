@@ -1,0 +1,32 @@
+## mutillidae (DOESN'T WORK)
+docker pull szsecurity/mutillidae
+docker run -p 1337:80 szsecurity/mutillidae
+
+## mutillidae (WORKS)
+docker pull citizenstig/nowasp
+
+## lamp
+docker pull linode/lamp
+
+# starting container
+docker container run -p 8080:80 -it linode/lamp /bin/bash
+
+# starting lamp
+service apache2 start && service mysql start
+
+# working html dir
+ls /var/www/example.com/public_html/
+
+# docker stuff to disconnect
+ctrl + p then ctrl + q
+
+# attach again
+docker container start -ai lamp
+
+# copy files to image and from image
+# to
+# docker cp local-file remote-image:/remote/file/location
+docker cp xssEncode.php lamp:/var/www/example.com/public_html/xssEncode.php
+# from
+# docker cp remote-image:/remote/file/location local-file
+docker cp lamp:/var/www/example.com/public_html/xssEncode.php xssEncode.php
