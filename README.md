@@ -9,11 +9,8 @@ This is an attempt to modernize the pentesting class that we take at UNCC. I wil
         * OSX - https://docs.docker.com/docker-for-mac/install/
         * windows - https://docs.docker.com/docker-for-windows/install/
 * vagrant
-    * install
-        * linux - 
-        * OSX - 
-        * windows - 
-* virtualbox
+    * install - https://www.vagrantup.com/docs/installation/
+* virtualbox - there are tons of videos on how to do this, so no links provided
 
 ## Format
 
