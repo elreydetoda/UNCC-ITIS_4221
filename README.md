@@ -34,11 +34,11 @@ This will develop as the year goes along, but till then it should be
 
 ### Classes
 
-This will contain the different things that we did each class (i.e. commands used during each class, files used, etc...)
+This folder will contain the different things that we did each class (i.e. commands used during each class, files used, etc...)
 
 ### Mutillidae
 
-This will cover all the different mutillidae quiz information (i.e. commands used during each quiz, files used, etc...)
+This folder will cover all the different mutillidae quiz information (i.e. commands used during each quiz, files used, etc...)
 
 ### Web-dir
 
