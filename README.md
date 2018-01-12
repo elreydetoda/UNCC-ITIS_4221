@@ -4,10 +4,10 @@ This is an attempt to modernize the pentesting class that we take at UNCC. I wil
 
 ## Requirements
 * docker
-    * install
-        * linux - https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#upgrade-docker-ce-1
-        * OSX - 
-        * windows - 
+    * install (if not list you will have to do more research as to how to install)
+        * linux - https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#upgrade-docker-ce-1 or (general install) https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/
+        * OSX - https://docs.docker.com/docker-for-mac/install/
+        * windows - https://docs.docker.com/docker-for-windows/install/
 * vagrant
     * install
         * linux - 
