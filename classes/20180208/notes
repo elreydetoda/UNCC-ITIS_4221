@@ -1,0 +1,68 @@
+# Injection Attacks and input validation.pptx slides start at 32
+xss against apache foundation through jira
+
+## test
+write attacks for sql and xss
+fix sql with embedded sql statements
+true false questions 30
+understand project and php file
+
+## different types of attacks
+
+1) injection
+* mixing data and strings
+** fix = throw out with better language and use better language or better statements (seperattion of domains)
+** legacy fix (bandaid) = data validation
+** types
+*** sql - embedded sql statements
+*** xss - input validation
+*** command - input validation
+*** log (poisoning) - encode log
+*** dir trav - input validation
+*** xxe (xml external entity) - input validation
+*** deserialization - input validation
+*input validation
+** types
+*** white list
+*** black list
+** trust boundary - api's decide what to validate and not
+
+3) statebased attack
+* types
+** CSRF (next exam)
+** session highjacking
+*** set flag for HTTPonly 
+*** ssl (encryption)
+*** randomized cookies
+*** delete from data structure
+
+4) ui
+* types
+** clickjacking (not this exam)
+*** put an xframe header to blow out iframe
+
+5) dos
+* types
+** regex dos
+** file path (recursion on server)
+
+6) parameter manipulation (tampering) - expose vulnerability from a crash
+
+## ethics
+1) responsible disclosure
+2) electronic civil disobediance (snowden)
+* guidelines
+** no harm to person or property
+** be ready for takeing repsonsiblity
+
+
+## xssEncode.php
+
+context switching - javascript executes from submission
+context dependant encoding
+* encode
+** html body - Into Textarea
+*** exploit - close textarea in html first
+** html Attr - Into Tag Attribute and with single quote
+** JS
+*** exploit - single quote to exploit

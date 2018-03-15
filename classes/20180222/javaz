@@ -1,0 +1,16 @@
+// difference are in exceptions
+
+// when function can't be called (run out of memory) 
+// fail open
+if (!accessAllowed())
+{
+	error message;
+	exit;
+}
+access()
+
+// fail safe
+if(accessAllowed()){access();}
+error message;
+exit;
+

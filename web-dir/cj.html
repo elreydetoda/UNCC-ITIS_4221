@@ -1,0 +1,33 @@
+<?php
+function willEncode($input) {
+  $return = '';
+  for ($i = 0; $i < strlen($input); $i++) {
+    $ch = substr($input,$i,1);
+    switch($ch) {
+    case '<':
+      $return .= '&lt;';
+      break;
+    case '>':
+      $return .= '&gt;';
+      break;
+    default:
+      $return .= $ch;
+    }
+  }
+  return $return;
+}
+?>
+
+<html>
+ 
+<head>
+<title> clickjacking testing </title>
+ 
+</head>
+ <body>
+<iframe id==“click jack” width=500 height=400
+             src="http://localhost:1337/xssEncode.php" style=opacity:0.2;
+             position: absolute; left10; bottom:100”>
+</iframe>
+</body>
+</html>

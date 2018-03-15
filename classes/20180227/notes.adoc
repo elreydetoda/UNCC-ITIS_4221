@@ -1,0 +1,26 @@
+= XSS, Clickjacking, and Secure Code Practices
+* XSS
+** attach url - http://localhost:1337/xssEncode.php?name=%3Cscript%3Ealert%28%27vuln%27%29%3C%2Fscript%3E
+* set url under instead of javascript
+* put url wherever needed.
+* clickjacking
+** cj.html iframe at the bottom of the page
+** load frame with all parameters with it and then place over the ui
+// browser xss protection 1 = on
+* `header('X-XSS-Protection: 0');`
+Content security = stop inline javascript
+* self is for specifying only same web domain
+* unsafe-inline (for legacy code that needs inline javascript, but stops from external reference js code injection)
+
+Clickjacking
+
+ssl - came out first secure socket layer ssl referse to tlsv1
+tls - tls v1 is old ssl now is the new understanding
+ssl-strip prevention
+* HSTS
+
+* Attacking hashes
+** hash algorithm
+** rainbow tables
+** bruteforce
+** salt + password hash a thousand times

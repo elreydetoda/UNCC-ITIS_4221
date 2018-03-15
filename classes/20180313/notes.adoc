@@ -1,0 +1,28 @@
+= Code analysis
+
+== Static
+
+=== Taint analysis
+
+. categories
+.. Source
+... read(), genenv(), getParameter(), dbquery - all taking in read, getters, etc.. for taking in untrusted information
+.. Sink
+... println(), logs() - writing out to a place
+.. Cleanse
+... Clears taint, e.g. input validation
+.. Entry point
+... main(), doGet()
+. When a taint goes to a sink it throws up an error (what static analysis does)
+. Static code
+.. source - getParameter() - XSS & generic source
+.. sink
+... println() - xss sink
+... logger() - log poisoning sink
+
+----
+<1>
+String idemployee = request.getParameter("idemployee");
+<1>
+ou$(date +%Y%m%d)t.println("<html> <body> Get Parameter:" + idemployee);
+----

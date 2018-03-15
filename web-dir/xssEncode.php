@@ -1,4 +1,21 @@
 <?php
+
+// browser xss protection 1 = on
+// header('X-XSS-Protection: 0');
+
+// header("Content-Security-Policy: script-src 'self';");
+
+//header("Content-Security-Policy: script-src 'self' 'unsafe-inline';");
+
+// header("Content-Security-Policy: frame-ancestors 'none';");
+
+// header("X-Frame-Options: DENY");
+
+// header("X-Frame-Options: ALLOW-FROM http://127.0.0.1");
+?>
+
+
+<?php
 function bodyEncode($input) {
   $return = '';
   for ($i = 0; $i < strlen($input); $i++) {
@@ -67,6 +84,10 @@ function JSEncode($input) {
   return $return;
 }
 ?>
+
+
+
+
 <html>
 <head>
 <title>XSS Demos</title>

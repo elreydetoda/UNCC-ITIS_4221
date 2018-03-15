@@ -30,3 +30,7 @@ docker cp xssEncode.php lamp:/var/www/example.com/public_html/xssEncode.php
 # from
 # docker cp remote-image:/remote/file/location local-file
 docker cp lamp:/var/www/example.com/public_html/xssEncode.php xssEncode.php
+
+
+docker container run --rm -v $(readlink -f web-dir):/var/www/example.com/public_html/ -p 127.0.0.1:1337:80 -d -e MYSQL_PASS='Chang3mE!' --name mutillidae citizenstig/nowasp
+docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp

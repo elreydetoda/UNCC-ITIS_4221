@@ -1,0 +1,153 @@
+  194  docker run -p 1337:80 szsecurity/mutillidae
+  195  systemctl start docker
+  196  sudo systemctl start docker
+  197  docker run -p 1337:80 szsecurity/mutillidae
+  199  docker container ls
+  200  docker container ls -a
+  201  docker container rm 5
+  202  docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+  203  docker image list
+  204  docker image -h
+  205  docker image rm b1
+  206  docker image list
+  207  docker container ls
+  208  docker container stop mutillidae
+  209  docker container ls
+  212  docker container ls
+  214  docker container ls -a
+  854  sudo cp /etc/docker/daemon.json
+  855  sudo cp /etc/docker/daemon.json{,.bckp}
+  856  sudo vim /etc/docker/daemon.json
+  857  docker container ls -a
+  858  sudo systemctl restart docker
+  861  mkdir docker
+  862  cd docker
+  864  git clone https://github.com/offensive-security/kali-linux-docker.git
+  865  cd kali-linux-docker
+  881  cd docker
+  883  mv kali-linux-docker ../vagrant
+  886  sudo rm /etc/docker/daemon.json
+  887  sudo systemctl restart docker
+  889  curl -fsSL get.docker.com -o get-docker.sh
+  891  cat get-docker.sh
+  905  cd kali-linux-docker
+  912  rm -rf kali-linux-docker
+  913  docker container run -it kalilinux/kali-linux-docker /bin/bash
+  916  docker container ls -a
+  917  docker container rm 4
+  918  docker container run -it --rm kalilinux/kali-linux-docker apt update && apt full-upgrade && apt auto-remove && apt autoclean && /bin/bash
+  919  docker container run -it --rm kalilinux/kali-linux-docker /bin/bash
+  920  docker container ls -a
+  922  cd ../docker
+  927  echo 'docker container run -it --rm kalilinux/kali-linux-docker /bin/bash' >> cmds
+  944  docker container run -v $(readlink -f scripts):/scripts/ -it --rm kalilinux/kali-linux-docker /bin/bash
+  946  docker container ls
+  947  docker container start -ai 67
+  949  docker container start -ai 67
+  954  docker container start -ai 67
+  972  docker container run -d --name rstudio --rm -v /home/elrey/documents/school/2017-2018/Spring/STAT-2223/r-code:/home/rstudio/stats_2223-rcode -p 127.0.0.1:8787:8787 rocker/verse
+  973  docker container ls
+  974  docker container ls -a
+  975  docker container stop rstudio
+  976  docker image list
+ 1013  history |grep docker | grep cd
+ 1014  cd workspace/personal/docker/
+ 1020  cd ~/workspace/personal/docker/kali
+ 1021  sudo systemctl start docker
+ 1022  docker container run -v $(readlink -f scripts):/scripts/ -it --rm kalilinux/kali-linux-docker /bin/bash
+ 1023  docker container stop amazing_lamarr
+ 1024  docker container run -v $(readlink -f scripts):/scripts/ -it --name kali_meta kalilinux/kali-linux-docker /bin/bash
+ 1025  docker container run -v $(readlink -f scripts):/scripts/ -it --name --rm kali_tmp kalilinux/kali-linux-docker /bin/bash
+ 1026  docker container run -v $(readlink -f scripts):/scripts/ -it --rm --name  kali_tmp kalilinux/kali-linux-docker /bin/bash
+ 1027  docker container stop kali_meta
+ 1028  docker container run -v $(readlink -f scripts):/scripts/ -it --name kali_meta kalilinux/kali-linux-docker /bin/bash
+ 1029  docker container start -ai kali_meta
+ 1030  docker container rm kali_meta
+ 1031  docker container run -v $(readlink -f scripts):/scripts/ -it --name kali_meta kalilinux/kali-linux-docker /bin/bash
+ 1032  docker container start -ai kali_tmp
+ 1033  docker container start -ai kali_meta
+ 1049  docker container stop -ai kali_meta
+ 1050  docker container stop kali_meta
+ 1069  docker container start -ai kali_tmp
+ 1070  docker container stop -ai kali_tmp
+ 1071  docker container stop kali_tmp
+ 1072  docker container ls -a
+ 1073  docker container ls 
+ 1471  docker vagrant ssh server
+ 1486  vagrant snapshot save try_docker server
+ 1487  vagrant snapshot save server try_docker
+ 1878  cd workspace/personal/docker
+ 1882  docker container run -v $(readlink -f scripts):/scripts/ -it --name kalilinux kalilinux/kali-linux-docker /bin/bash
+ 1883  sudo systemctl start docker
+ 1884  docker container run -v $(readlink -f scripts):/scripts/ -it --name kalilinux kalilinux/kali-linux-docker /bin/bash
+ 1886  docker image list
+ 1887  docker container ls
+ 1888  docker container start -ai kalilinux
+ 1892  docker container start -ai kalilinux
+ 1894  vim scripts/docker-on-kali.sh
+ 1895  docker container start -ai kalilinux
+ 1896  vim scripts/docker-on-kali.sh
+ 1897  docker container start -ai kalilinux
+ 1898  docker container stop kalilinux
+ 1899  docker container run -v $(readlink -f scripts):/scripts/ -it --name kalilinux kalilinux/kali-linux-docker /bin/bash
+ 1900  docker container rm kalilinux
+ 1901  docker container run -v $(readlink -f scripts):/scripts/ -it --name kalilinux kalilinux/kali-linux-docker /bin/bash
+ 1902  docker container stop kalilinux
+ 1903  docker container rm kalilinux
+ 1943  docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+ 1944  sudo systemctl start docker
+ 1945  docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+ 1947  docker container stop
+ 1948  docker container ls
+ 1949  docker container stop mutillidae
+ 2000  docker container run -d --name rstudio --rm -v /home/elrey/documents/school/2017-2018/Spring/STAT-2223/r-code:/home/rstudio/stats_2223-rcode -p 127.0.0.1:8787:8787 rocker/verse
+ 2058  docker container stop rstudio
+ 2097  sudo systemctl start docker
+ 2098  docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+ 2099  docker container stop mutillidae
+ 2120  docker container run --rm -v $(readlink -f web-dir):/var/www/example.com/public_html/ -p 127.0.0.1:1337:80 -d -e MYSQL_PASS='Chang3mE!' --name lamp  linode/lamp
+ 2121  docker container start -ai lamp
+ 2122  docker container ls
+ 2123  docker container ls -a
+ 2125  docker container run --rm -v $(readlink -f web-dir):/var/www/example.com/public_html/ -p 127.0.0.1:1337:80 -it  --name lamp  linode/lamp
+ 2127  docker container start -ai lamp
+ 2140  docker container stop lamp
+ 2225  docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+ 2226  docker container ls
+ 2227  docker container ls -a
+ 2230  docker container stop mutillidae
+ 2748  mkdir docker
+ 3077  docker run -d -it \\n\t\t-e DISPLAY=$DISPLAY \\n\t\t-e "TZ=America/Chicago" \\n\t\t--name eclipse \\n\t\tpsharkey/eclipse
+ 3078  sudo systemctl start docker
+ 3079  docker run -d -it \\n\t\t-e DISPLAY=$DISPLAY \\n\t\t-e "TZ=America/Chicago" \\n\t\t--name eclipse \\n\t\tpsharkey/eclipse
+ 3080  docker stop eclipse
+ 3081  docker container rm  eclipse
+ 3082  docker image list
+ 3083  docker image rm psharkey/eclipse
+ 3243  docker container run --rm -v $(readlink -f web-dir):/var/www/example.com/public_html/ -p 127.0.0.1:1337:80 -it  --name lamp  linode/lamp
+ 3300  docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+ 3301  docker container stop lamp
+ 3302  docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+ 3308  docker container stop mutillidae
+ 5046  docker images ls
+ 5048  sudo systemctl start docker
+ 5049  docker images ls
+ 5050  docker image ls
+ 5051  docker container run -v $(readlink -f .):/labz/ -it --name kalilinux kalilinux/kali-linux-docker /bin/bash
+ 5083  docker container start -ai kali
+ 5084  docker container ls
+ 5085  docker container start -ai kalilinux
+ 5086  docker container ls
+ 5101  docker container run -d --name rstudio --rm -v /home/elrey/documents/school/2017-2018/Spring/STAT-2223/r-code:/home/rstudio/stats_2223-rcode -p 127.0.0.1:8787:8787 rocker/verse
+ 5281  docker container run --rm -v $(readlink -f web-dir):/var/www/example.com/public_html/ -p 127.0.0.1:1337:80 -it  --name lamp  linode/lamp
+ 5282  sudo systemctl start docker
+ 5283  docker container run --rm -v $(readlink -f web-dir):/var/www/example.com/public_html/ -p 127.0.0.1:1337:80 -it  --name lamp  linode/lamp
+ 5288  docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+ 5289  docker container ls
+ 5290  docker container ls -a
+ 5298  docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+ 5299  sudo systemctl start docker
+ 5300  docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+ 5301  docker container ls -a
+ 5303  docker container stop mutillidae
+ 5367  history | grep docker

@@ -1,0 +1,31 @@
+session hijacking
+	prevent against 
+		use ssl
+		when someone logs out you should close sessions
+	javascript
+	setting cookie of someone else in your browser and bypassing auth with someone else's session
+	login as fsmith:red --> administrative console --> current sessions --> grab session --> cookie editor
+		get password
+			change email (hacker@hacker.com) --> reset password username (rscott) & mothers maden name in phpmyadmin (base64 encoded) --> hacker bar base64 decode --> Heifner
+get into phpmyadmin
+	parameter maniuplation --> path injections to database.inf for un:pw
+	
+csrf attack
+password cracking
+path manipulation
+forced browsing
+path injection (2 crashes) --> FAQ ? at the end get password --> crack hash
+squirrelmail name:hacker pass:1234
+
+webtunes
+change address - CSRF on tunestore
+click jacking for bypassing token protection for csrf
+	prevent (header) that doesn't allow loading in an iframe
+capcha jacking for bypassing token protection for csrf
+	prevent (header) that doesn't allow loading in an iframe
+
+chatter mouse rules
+
+
+steal password with xss
+csrf & click jacking

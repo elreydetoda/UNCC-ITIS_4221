@@ -1,0 +1,12 @@
+securityfirst vm
+
+# normally return the first user in the database for login
+sql-inject = user:billchu pw:' OR 'a'='a
+
+javascript = <script>alert('been pwned')</script>
+
+un: fsmith pw:red
+
+view activities log while admin to do log poisoning with stored javascript XSS
+
+
