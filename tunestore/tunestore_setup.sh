@@ -33,5 +33,7 @@ echo alias eclipse="/opt/eclipse/eclipse" >> ${homez}/.bashrc
 mkdir -p /opt/eclipse && cd $_
 curl -s http://eclipse.mirror.rafal.ca/technology/epp/downloads/release/neon/2/eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz | tar zx --strip-components=1
 
+echo 'Run this command when you start vagrant ssh into the vm'
 echo -e "sudo /opt/tomcat/bin/startup.sh && sleep 3 && sudo /opt/tomcat/bin/shutdown.sh && sudo systemctl stop tomcat"
+echo 'The following is your url that you browse to on your local machine i.e. http://localhost:8090/Tunestore/'
 echo '/Tunestore/'

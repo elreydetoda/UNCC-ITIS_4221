@@ -49,3 +49,22 @@ I shall try to put a README.md in each folder to help describe what to do and ho
 
 #### Vagrantfile
 I will try to include a Vagrantfile for each mutillidae excercise to make sure all the configuration is done properly
+
+### Tunestore folder
+
+This has all the resources to 
+
+## Commands to run
+
+### mutillidae
+
+```
+docker container run --rm -p 127.0.0.1:1337:80 -d --name mutillidae citizenstig/nowasp
+```
+
+### Tunestore
+```
+cd tunestore
+vagrant box update
+vagrant up
+```
