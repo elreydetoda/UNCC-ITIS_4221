@@ -1,0 +1,117 @@
+---
+- hosts: all
+  become: true
+  vars:
+          userz: vagrant
+          home_dir: '/home/{{userz}}/'
+          packages:
+                  - libswt-gtk-3-jni
+                  - libswt-gtk-3-java
+                  - xorg
+                  - oracle-java8-installer
+                  - chromium-browser
+          java_path: '/usr/lib/jvm/java-8-oracle'
+          tomcat_dir: '/opt/tomcat'
+          tomcat_version: '8.0.51'
+          tomcat_file: 'apache-tomcat-{{ tomcat_version }}.tar.gz'
+          tomcat_url: 'http://apache.mirrors.lucidnetworks.net/tomcat/tomcat-8/v{{ tomcat_version }}/bin/{{ tomcat_file }}'
+          tomcat_full_path: '{{tomcat_dir}}/{{ tomcat_file }}'
+          tomcat_service: '/etc/systemd/system/tomcat.service'
+          eclipse_dir: '/opt/eclipse'
+          eclipse_url: 'http://eclipse.mirror.rafal.ca/technology/epp/downloads/release/neon/2/eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz'
+          eclipse_comp_file: '{{eclipse_dir}}/eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz'
+          esapi_url: 'https://search.maven.org/remotecontent?filepath=org/owasp/esapi/esapi/2.1.0.1/esapi-2.1.0.1.jar'
+
+  pre_tasks:
+        - name: updating deb base packages
+          apt:
+                  update_cache: yes
+          when: ansible_os_family == "Debian"
+  
+        - name: installing necessary java repo
+          apt_repository:
+                  repo: 'ppa:webupd8team/java'
+          when: ansible_os_family == "Debian"
+
+        - name: setting debconf values to install packages properly
+          debconf:
+                  name: oracle-java8-installer
+                  question: shared/accepted-oracle-license-v1-1 
+                  vtype: select
+                  value: 'true'
+          when: ansible_os_family == "Debian"
+  
+  
+  tasks:
+         - name: installing base packages
+           package:
+                   name: '{{ packages }}'
+                   state: present
+
+         - name: correct java version selected 
+           alternatives:
+                   name: java 
+                   path: '{{ java_path }}'
+         - name: creating tomcat group
+           group:
+                   name: tomcat
+         - name: creating tomcat 
+           user:
+                   name: tomcat
+                   group: tomcat
+                   home: '{{ tomcat_dir }}'
+                   create_home: no
+         - name: setting up tomcat dir
+           file:
+                   path: '{{ tomcat_dir }}'
+                   state: directory
+                   owner: tomcat
+                   group: tomcat
+         - name: getting the necessary tomcat files
+           get_url:
+                   url: '{{ tomcat_url }}'
+                   dest: '{{ tomcat_dir }}'
+         - name: extracting tomcat files
+           unarchive:
+                   src: '{{ tomcat_full_path }}'
+                   dest: '{{ tomcat_dir }}'
+                   owner: tomcat
+                   group: tomcat
+                   remote_src: yes
+                   extra_opts: [--strip-components=1]
+         - name: setting up tomcat service
+           copy:
+                   src: tomcat.service
+                   dest: '{{ tomcat_service }}'
+         - name: allowing anyone to read the conf dir
+           acl:
+                   path: '{{ tomcat_dir }}/conf'
+                   etype: other
+                   permissions: rwx
+                   state: present
+                   recursive: yes
+         - name: reloading services
+           systemd:
+                   daemon_reload: yes
+         - name: setting up eclipse alias
+           lineinfile:
+                   path: /home/{{userz}}/.bashrc
+                   line: 'alias eclipse="/opt/eclipse/eclipse"'
+         - name: setting up eclipse dir
+           file:
+                   path: '{{ eclipse_dir }}'
+                   state: directory
+         - name: getting the necessary eclipse files
+           get_url:
+                   url: '{{ eclipse_url }}'
+                   dest: '{{ eclipse_dir }}'
+         - name: extracting eclipse files
+           unarchive:
+                   src: '{{ eclipse_comp_file }}'
+                   dest: '{{ eclipse_dir }}'
+                   remote_src: yes
+                   extra_opts: [--strip-components=1]
+         - name: getting the necessary esapi files
+           get_url:
+                   url: '{{ esapi_url }}'
+                   dest: '{{ home_dir }}'

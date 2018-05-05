@@ -1,0 +1,66 @@
+== Ethics
+. responsible disclosure
+. electronic civil disobedience
+
+== types of vulns
+. injection vuln
+.. sqli
+.. xss
+.. command injection
+.. path traversal
+.. log poisoning/injection/forgery
+... js xss
+... fake logout
+.. xxe (xml external entity injection)
+... file injection/retreival/path traversal
+.. json injection
+.. fix
+... architecture
+.... sql - embeded sql
+.... xss - csp headers
+. state based vulns
+.. csrf
+.. session hijacking
+... json based (attacking server that doesn't reauth user since they are already authed)
+. DOS
+. UI attack
+.. click jacking
+. memory based attack
+.. buffer over/underflows
+.. heap spray
+.. use after free
+. side channel attack
+. static analysis
+.. chars
+... source code
+.. taint prop
+... discover injection specifically
+... source and sink
+.. structural analysis
+... csrf
+.... csrfguard
+. dynamic analysis
+.. chars
+... need executable
+.. zap
+... header detections
+.... xss protection
+.... xframe protection
+.... csp protection
+. false positive/negative
+. threat modeling
+BISMM
+buffer overflow
+stack guard
+aslr
+dep
+access control
+.. logging or not
+.. whether the person who owns the object are properly logged in
+.. whether the person who owns it has the privs to execute
+... banking, you can login, you are associated to the account, but can't spend money
+code review exercises
+not roles, but abbilities - not should this role be able to access, but does this person have the permission to do this
+passwords and secrets in memory
+hashing multiple times
+salt

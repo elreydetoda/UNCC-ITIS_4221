@@ -1,0 +1,6 @@
+= Client Side Applications
+
+angular js extra project to convert a page of tunestore into angular
+angular js doesn't mix data and code
+
+owasp top 10

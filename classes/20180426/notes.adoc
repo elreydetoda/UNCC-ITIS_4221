@@ -1,0 +1,21 @@
+= Notes
+. seperation of domains
+. defense in depth
+. least priviledge
+.. access control to prevent against escalation
+.. `chroot`
+.. java policytool
+... use files for today to show example
+... example
+
++
+.commands 
+```
+javac testpolicy.java
+java -Djava.security.manager -Djava.security.policy=4221policy.policy testpolicy
+```
++
+. isolation - isolate processes to prevent compromization
+.. vms
+... knox for samsung
+. simplicity (minimalism)
