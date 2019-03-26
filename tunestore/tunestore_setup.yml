@@ -14,12 +14,13 @@
           tomcat_dir: '/opt/tomcat'
           tomcat_version: '8.0.51'
           tomcat_file: 'apache-tomcat-{{ tomcat_version }}.tar.gz'
-          tomcat_url: 'http://apache.mirrors.lucidnetworks.net/tomcat/tomcat-8/v{{ tomcat_version }}/bin/{{ tomcat_file }}'
+          tomcat_url: 'https://archive.apache.org/dist/tomcat/tomcat-8/v{{ tomcat_version }}/bin/{{ tomcat_file }}'
           tomcat_full_path: '{{tomcat_dir}}/{{ tomcat_file }}'
           tomcat_service: '/etc/systemd/system/tomcat.service'
           eclipse_dir: '/opt/eclipse'
-          eclipse_url: 'http://eclipse.mirror.rafal.ca/technology/epp/downloads/release/neon/2/eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz'
-          eclipse_comp_file: '{{eclipse_dir}}/eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz'
+          eclipse_version: '3'
+          eclipse_url: 'http://eclipse.mirror.rafal.ca/technology/epp/downloads/release/neon/{{eclipse_version}}/eclipse-jee-neon-{{eclipse_version}}-linux-gtk-x86_64.tar.gz'
+          eclipse_comp_file: '{{eclipse_dir}}/eclipse-jee-neon-{{eclipse_version}}-linux-gtk-x86_64.tar.gz'
           esapi_url: 'https://search.maven.org/remotecontent?filepath=org/owasp/esapi/esapi/2.1.0.1/esapi-2.1.0.1.jar'
 
   pre_tasks:
