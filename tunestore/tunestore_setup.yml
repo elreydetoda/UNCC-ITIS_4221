@@ -115,3 +115,4 @@
            get_url:
                    url: '{{ esapi_url }}'
                    dest: '{{ home_dir }}'
+# need to still setup csrf-guard.jar download
